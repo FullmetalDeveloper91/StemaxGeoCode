@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Lj/fe7JTHqIX+SDHfp8QLpzJ8dfWYG5b9ngpJTDBDJtfZpfll+F8oqppk6H8NAocWcNWJyRjJcC1O0EeXFBGdA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lonel\\source\\repos\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lonel\\.nuget\\packages\\microsoft.web.webview2\\1.0.2365.46\\microsoft.web.webview2.1.0.2365.46.nupkg.sha512"
+  ],
+  "logs": []
+}
