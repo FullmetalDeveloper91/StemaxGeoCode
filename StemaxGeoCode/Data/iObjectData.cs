@@ -9,7 +9,7 @@ namespace StemaxGeoCode.Data
     interface iObjectData
     {
         string Adress { get; set; }
-        double latitude { get; set; }
-        double longitude { get; set; }
+        double Latitude { get; set; }
+        double Longitude { get; set; }
     }
 }

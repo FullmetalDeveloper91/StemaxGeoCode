@@ -8,7 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -16,10 +15,16 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <ListBox Name="adressesList" Grid.Column="0" Grid.Row="0"/>
-        <Label Name="coordLabel" Grid.Column="0" Grid.Row="1"/>
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="5">
+            <TextBlock Name="coordLabel" Height="20"/>            
+            <Button Name="getCoordBtn" Height="25" Margin="2,10,2,5">
+                Get Coordinate
+            </Button>
+        </StackPanel>
+        
         <wv2:WebView2 Name="staticMapView" Grid.Column="1" Grid.RowSpan="2"/>
     </Grid>
 </Window>
