@@ -3,25 +3,42 @@ using StemaxGeoCode.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace StemaxGeoCode.ViewModels
 {
-    internal class MainViewModel
+    class MainViewModel:AbstractViewModel
     {
         private iRepository repository;
-        private List<ObjectData> objects;
+        private iMapUriBuilder mapUriBuilder;
+        private Uri mapUri;
 
-        public IEnumerable<ObjectData> Objects {  get { return objects.ToImmutableList<ObjectData>(); } }
-        public Uri mapUri { get; }
+        public ObservableCollection<iObjectData> Objects { get; private set; }
 
-        public MainViewModel(iRepository repository)
+        public Uri MapUri
+        {
+            get { return mapUri; }
+            private set {
+                if (mapUri != value)
+                {
+                    mapUri = value;
+                    OnPropertyChanged(nameof(MapUri));
+                }               
+            }
+        }
+
+        public bool MapEnabled => !mapUriBuilder.Center.IsZero;
+
+        public MainViewModel(iRepository repository, iMapUriBuilder mapUriBuilder)
         {
             this.repository = repository;
-            objects = new();
-            mapUri = new Uri("http://static.maps.2gis.com/1.0?center=82.911182,55.058883&zoom=15&size=500,350");
+            this.mapUriBuilder = mapUriBuilder;
+            Objects = new ObservableCollection<iObjectData>(repository.loadAllObjects());
+            MapUri = mapUriBuilder.Build();
         }
     }
 }

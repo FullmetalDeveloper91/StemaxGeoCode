@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StemaxGeoCode"
-        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" xmlns:viewmodels="clr-namespace:StemaxGeoCode.ViewModels" xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
@@ -17,7 +17,12 @@
             <RowDefinition/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <ListBox Name="adressesList" Grid.Column="0" Grid.Row="0"/>
+        <ListBox 
+            Name="adressesList" 
+            Grid.Column="0" 
+            Grid.Row="0"
+            ItemsSource="{Binding Objects}"
+        />
         <StackPanel Grid.Column="0" Grid.Row="1" Margin="5">
             <TextBlock Name="coordLabel" Height="20"/>            
             <Button Name="getCoordBtn" Height="25" Margin="2,10,2,5">
@@ -25,6 +30,18 @@
             </Button>
         </StackPanel>
         
-        <wv2:WebView2 Name="staticMapView" Grid.Column="1" Grid.RowSpan="2"/>
+        <wv2:WebView2 
+            Name="staticMapView" 
+            Grid.Column="1" 
+            Grid.RowSpan="2"
+            Source="{Binding MapUri}"
+            Visibility="Hidden"
+        />
+
+        <TextBlock
+            Grid.Column="1" 
+            Grid.RowSpan="2">
+            Please, select object to see them on the map
+        </TextBlock>
     </Grid>
 </Window>

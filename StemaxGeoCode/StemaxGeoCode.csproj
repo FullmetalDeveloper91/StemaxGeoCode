@@ -9,7 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CalcBinding" Version="2.5.2" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2365.46" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+    <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="110.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataSource\" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StemaxGeoCode.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace StemaxGeoCode.Repository
 {
     interface iRepository
     {
-        public void loadAllObjects();
+        public List<iObjectData> loadAllObjects();
         public void saveAllObjects();
         public void saveObject(int id);
     }

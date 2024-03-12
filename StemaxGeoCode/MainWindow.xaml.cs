@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using StemaxGeoCode.Data;
+using StemaxGeoCode.Repository;
+using StemaxGeoCode.ViewModels;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,7 +23,8 @@ namespace StemaxGeoCode
         public MainWindow()
         {
             InitializeComponent();
-            staticMapView.Source = new Uri($"http://static.maps.2gis.com/1.0?zoom=15&size=500,350&markers=37.560504,55.714333");
+            Coordinate startCoord = new Coordinate(82.91, 55.06);
+            DataContext = new MainViewModel(new TestRepository(), new DoubleGisMapUriBuilder(15,500,350, new Coordinate(), new Coordinate()));
         }
     }
 }

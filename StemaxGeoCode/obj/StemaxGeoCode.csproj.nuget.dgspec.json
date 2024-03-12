@@ -50,9 +50,21 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "CalcBinding": {
+              "target": "Package",
+              "version": "[2.5.2, )"
+            },
             "Microsoft.Web.WebView2": {
               "target": "Package",
               "version": "[1.0.2365.46, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[110.2.0, )"
+            },
+            "RestSharp.Serializers.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[110.2.0, )"
             }
           },
           "imports": [

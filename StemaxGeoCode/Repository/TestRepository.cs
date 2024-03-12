@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StemaxGeoCode.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,19 @@ namespace StemaxGeoCode.Repository
 {
     internal class TestRepository : iRepository
     {
-        public void loadAllObjects()
+        private List<iObjectData> objects;
+
+        public TestRepository() {
+            objects = new List<iObjectData>
+            {
+                new ObjectData(1, "1-я Ракитная, 1А"),
+                new ObjectData(2, "2 - я Прокопьевская, 35 / 2")
+            };
+        }
+
+        public List<iObjectData> loadAllObjects()
         {
-            throw new NotImplementedException();
+            return objects;
         }
 
         public void saveAllObjects()
