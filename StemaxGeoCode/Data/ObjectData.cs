@@ -10,14 +10,13 @@ namespace StemaxGeoCode.Data
     class ObjectData : iObjectData
     {
         public int Id { get; }
-        public ObjectData(string Adress) { this.Adress = Adress; }
         public string Adress { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+        public Coordinate coordinate { get; set; }
 
-        public ObjectData(int id, string adress) {
+        public ObjectData(int id, string adress, Coordinate? coordinate = null) {
             this.Id = id;
             this.Adress = adress;
+            this.coordinate = coordinate ?? new Coordinate(0, 0);
         }
 
         public override string ToString()

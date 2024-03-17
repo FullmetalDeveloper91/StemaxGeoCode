@@ -10,7 +10,6 @@ namespace StemaxGeoCode.Data
     {
         int Id { get; }
         string Adress { get; set; }
-        double Latitude { get; set; }
-        double Longitude { get; set; }
+        public Coordinate coordinate { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace StemaxGeoCode.Repository
 {
     interface iRepository
     {
-        public List<iObjectData> loadAllObjects();
+        public Task<List<iObjectData>> loadAllObjects();
         public void saveAllObjects();
         public void saveObject(int id);
     }

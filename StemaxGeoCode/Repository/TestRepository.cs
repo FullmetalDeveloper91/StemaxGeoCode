@@ -14,13 +14,14 @@ namespace StemaxGeoCode.Repository
         public TestRepository() {
             objects = new List<iObjectData>
             {
-                new ObjectData(1, "1-я Ракитная, 1А"),
-                new ObjectData(2, "2 - я Прокопьевская, 35 / 2")
-            };
+                new ObjectData(1, "1-я Ракитная, 1А", new Coordinate(82.888,55.0164)),
+                new ObjectData(2, "2 - я Прокопьевская, 35 / 2", new Coordinate(82.982683,54.944425))
+            };            
         }
 
-        public List<iObjectData> loadAllObjects()
+        async public Task<List<iObjectData>> loadAllObjects()
         {
+            await Task.Delay(2000);
             return objects;
         }
 

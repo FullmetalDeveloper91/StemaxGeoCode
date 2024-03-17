@@ -21,27 +21,46 @@
             Name="adressesList" 
             Grid.Column="0" 
             Grid.Row="0"
-            ItemsSource="{Binding Objects}"
-        />
+            ItemsSource="{Binding Objects}" SelectedItem="{Binding SelectedObject}">           
+        </ListBox>
+             
+        
         <StackPanel Grid.Column="0" Grid.Row="1" Margin="5">
             <TextBlock Name="coordLabel" Height="20"/>            
             <Button Name="getCoordBtn" Height="25" Margin="2,10,2,5">
-                Get Coordinate
+                Get Coordinates
             </Button>
         </StackPanel>
         
         <wv2:WebView2 
-            Name="staticMapView" 
+            Name="staticMapView"
             Grid.Column="1" 
-            Grid.RowSpan="2"
-            Source="{Binding MapUri}"
-            Visibility="Hidden"
-        />
-
-        <TextBlock
+            Grid.Row="0"
+            Source="{Binding MapUri}"/>
+        <Grid
             Grid.Column="1" 
-            Grid.RowSpan="2">
-            Please, select object to see them on the map
-        </TextBlock>
+            Grid.Row="1">
+            <StackPanel 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom" 
+                Margin="10"
+                Grid.ZIndex="2">
+                <Button Name="btnZoomIn" Width="20" Height="20">
+                    +
+                </Button>
+                <Button Name="btnZoomOut" Width="20" Height="20">
+                    -
+                </Button>
+            </StackPanel>
+            <Button 
+                Name="btnFocusToObj"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="10"
+                Padding="5"
+                Grid.ZIndex="2">
+                To object
+            </Button>
+        </Grid>        
     </Grid>
 </Window>
