@@ -458,24 +458,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lonel\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Инженер\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lonel\\source\\repos\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode.csproj",
+      "projectUniqueName": "C:\\Проекты\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode.csproj",
       "projectName": "StemaxGeoCode",
-      "projectPath": "C:\\Users\\lonel\\source\\repos\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode.csproj",
-      "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lonel\\source\\repos\\StemaxGeoCode\\StemaxGeoCode\\obj\\",
+      "projectPath": "C:\\Проекты\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode.csproj",
+      "packagesPath": "C:\\Users\\Инженер\\.nuget\\packages\\",
+      "outputPath": "C:\\Проекты\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\lonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Инженер\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -483,7 +478,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
