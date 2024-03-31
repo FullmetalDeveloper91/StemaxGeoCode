@@ -24,7 +24,8 @@ namespace StemaxGeoCode
         {
             InitializeComponent();
             Coordinate startCoord = new Coordinate(82.91, 55.06);
-            DataContext = new MainViewModel(new TestObjectsRepository(), new DoubleGisMapUriBuilder(15,500,350, new Coordinate(), new Coordinate()));
+            //DataContext = new MainViewModel(new TestObjectsRepository(), new DoubleGisMapUriBuilder(15,500,350, new Coordinate(), new Coordinate()));
+            DataContext = new MainViewModel(new DbObjectRepository(), new DoubleGisMapUriBuilder(15, 500, 350, new Coordinate(), new Coordinate()));
         }
 
         private void adressesList_Selected(object sender, RoutedEventArgs e)

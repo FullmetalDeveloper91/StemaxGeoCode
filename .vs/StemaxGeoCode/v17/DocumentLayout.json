@@ -1,34 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\",
+  "WorkspaceRootPath": "E:\\GitProjects\\StemaxGeoCode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|c:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\stemaxgeocode\\stemaxgeocode\\stemaxgeocode\\data\\geocode\\georesponse2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|solutionrelative:stemaxgeocode\\data\\geocode\\georesponse2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|e:\\gitprojects\\stemaxgeocode\\stemaxgeocode\\repository\\dbobjectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|solutionrelative:stemaxgeocode\\repository\\dbobjectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|c:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\stemaxgeocode\\stemaxgeocode\\stemaxgeocode\\datasource\\yandexgeoapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|solutionrelative:stemaxgeocode\\datasource\\yandexgeoapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|e:\\gitprojects\\stemaxgeocode\\stemaxgeocode\\data\\objectdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|solutionrelative:stemaxgeocode\\data\\objectdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|c:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\stemaxgeocode\\stemaxgeocode\\stemaxgeocode\\repository\\geocoderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|solutionrelative:stemaxgeocode\\repository\\geocoderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|c:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\stemaxgeocode\\stemaxgeocode\\stemaxgeocode\\repository\\testobjectsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|e:\\gitprojects\\stemaxgeocode\\stemaxgeocode\\repository\\testobjectsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|solutionrelative:stemaxgeocode\\repository\\testobjectsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|c:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\stemaxgeocode\\stemaxgeocode\\stemaxgeocode\\repository\\igeocoderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|solutionrelative:stemaxgeocode\\repository\\igeocoderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|c:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\stemaxgeocode\\stemaxgeocode\\stemaxgeocode\\datasource\\igeoapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|solutionrelative:stemaxgeocode\\datasource\\igeoapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|c:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\stemaxgeocode\\stemaxgeocode\\stemaxgeocode\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|e:\\gitprojects\\stemaxgeocode\\stemaxgeocode\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|solutionrelative:stemaxgeocode\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|e:\\gitprojects\\stemaxgeocode\\stemaxgeocode\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7949C6E5-D3D5-425C-9202-3A382C2DFDEE}|StemaxGeoCode\\StemaxGeoCode.csproj|solutionrelative:stemaxgeocode\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,99 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "iGeocodeRepository.cs",
-              "DocumentMoniker": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\Repository\\iGeocodeRepository.cs",
-              "RelativeDocumentMoniker": "StemaxGeoCode\\Repository\\iGeocodeRepository.cs",
-              "ToolTip": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\Repository\\iGeocodeRepository.cs",
-              "RelativeToolTip": "StemaxGeoCode\\Repository\\iGeocodeRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "ObjectData.cs",
+              "DocumentMoniker": "E:\\GitProjects\\StemaxGeoCode\\StemaxGeoCode\\Data\\ObjectData.cs",
+              "RelativeDocumentMoniker": "StemaxGeoCode\\Data\\ObjectData.cs",
+              "ToolTip": "E:\\GitProjects\\StemaxGeoCode\\StemaxGeoCode\\Data\\ObjectData.cs",
+              "RelativeToolTip": "StemaxGeoCode\\Data\\ObjectData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-19T08:43:22.659Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "iGeoApiClient.cs",
-              "DocumentMoniker": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\DataSource\\iGeoApiClient.cs",
-              "RelativeDocumentMoniker": "StemaxGeoCode\\DataSource\\iGeoApiClient.cs",
-              "ToolTip": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\DataSource\\iGeoApiClient.cs",
-              "RelativeToolTip": "StemaxGeoCode\\DataSource\\iGeoApiClient.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-19T09:12:02.108Z",
+              "WhenOpened": "2024-03-31T13:55:38.91Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GeoResponse2.cs",
-              "DocumentMoniker": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\Data\\GeoCode\\GeoResponse2.cs",
-              "RelativeDocumentMoniker": "StemaxGeoCode\\Data\\GeoCode\\GeoResponse2.cs",
-              "ToolTip": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\Data\\GeoCode\\GeoResponse2.cs",
-              "RelativeToolTip": "StemaxGeoCode\\Data\\GeoCode\\GeoResponse2.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAqwDAAAAAeAAAA",
+              "Title": "DbObjectRepository.cs",
+              "DocumentMoniker": "E:\\GitProjects\\StemaxGeoCode\\StemaxGeoCode\\Repository\\DbObjectRepository.cs",
+              "RelativeDocumentMoniker": "StemaxGeoCode\\Repository\\DbObjectRepository.cs",
+              "ToolTip": "E:\\GitProjects\\StemaxGeoCode\\StemaxGeoCode\\Repository\\DbObjectRepository.cs",
+              "RelativeToolTip": "StemaxGeoCode\\Repository\\DbObjectRepository.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAowDkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-19T09:09:37.781Z",
+              "WhenOpened": "2024-03-31T13:18:30.519Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "TestObjectsRepository.cs",
-              "DocumentMoniker": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\Repository\\TestObjectsRepository.cs",
+              "DocumentMoniker": "E:\\GitProjects\\StemaxGeoCode\\StemaxGeoCode\\Repository\\TestObjectsRepository.cs",
               "RelativeDocumentMoniker": "StemaxGeoCode\\Repository\\TestObjectsRepository.cs",
-              "ToolTip": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\Repository\\TestObjectsRepository.cs",
+              "ToolTip": "E:\\GitProjects\\StemaxGeoCode\\StemaxGeoCode\\Repository\\TestObjectsRepository.cs",
               "RelativeToolTip": "StemaxGeoCode\\Repository\\TestObjectsRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABIAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-19T08:48:26.369Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GeocodeRepository.cs",
-              "DocumentMoniker": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\Repository\\GeocodeRepository.cs",
-              "RelativeDocumentMoniker": "StemaxGeoCode\\Repository\\GeocodeRepository.cs",
-              "ToolTip": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\Repository\\GeocodeRepository.cs",
-              "RelativeToolTip": "StemaxGeoCode\\Repository\\GeocodeRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-19T08:46:30.654Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "YandexGeoApiClient.cs",
-              "DocumentMoniker": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\DataSource\\YandexGeoApiClient.cs",
-              "RelativeDocumentMoniker": "StemaxGeoCode\\DataSource\\YandexGeoApiClient.cs",
-              "ToolTip": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\DataSource\\YandexGeoApiClient.cs",
-              "RelativeToolTip": "StemaxGeoCode\\DataSource\\YandexGeoApiClient.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwBgAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-19T08:41:55.442Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "MainViewModel.cs",
-              "DocumentMoniker": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\ViewModels\\MainViewModel.cs",
+              "DocumentMoniker": "E:\\GitProjects\\StemaxGeoCode\\StemaxGeoCode\\ViewModels\\MainViewModel.cs",
               "RelativeDocumentMoniker": "StemaxGeoCode\\ViewModels\\MainViewModel.cs",
-              "ToolTip": "C:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\StemaxGeoCode\\StemaxGeoCode\\StemaxGeoCode\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "E:\\GitProjects\\StemaxGeoCode\\StemaxGeoCode\\ViewModels\\MainViewModel.cs",
               "RelativeToolTip": "StemaxGeoCode\\ViewModels\\MainViewModel.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAUwDwAAAAQAAAA",
+              "ViewState": "AQIAAEIAAAAAAAAAAAA4wFgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-19T08:06:06.314Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\GitProjects\\StemaxGeoCode\\StemaxGeoCode\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "StemaxGeoCode\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\GitProjects\\StemaxGeoCode\\StemaxGeoCode\\MainWindow.xaml.cs",
+              "RelativeToolTip": "StemaxGeoCode\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-31T14:04:39.504Z"
             }
           ]
         }

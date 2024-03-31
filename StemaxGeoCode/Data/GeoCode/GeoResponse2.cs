@@ -124,6 +124,4 @@
         public string ThoroughfareName { get; set; }
         public Premise Premise { get; set; }
     }
-
-
 }

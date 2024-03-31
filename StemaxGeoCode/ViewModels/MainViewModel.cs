@@ -2,13 +2,11 @@
 using StemaxGeoCode.DataSource;
 using StemaxGeoCode.Repository;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Windows.Data;
-using System.Windows.Threading;
 
 namespace StemaxGeoCode.ViewModels
 {
-    enum DataLoadingState { isLoading, isLoaded, isError}
+    enum DataLoadingState { isLoading, isLoaded, isError }
     class MainViewModel : AbstractViewModel
     {
         private iObjectsRepository repository;
@@ -16,6 +14,7 @@ namespace StemaxGeoCode.ViewModels
         private iMapUriBuilder mapUriBuilder;
         private Uri mapUri;
         private iObjectData selectedObject;
+
         private object objectsCollectionLock = new object();
 
         public ObservableCollection<iObjectData> Objects { get; private set; }
@@ -39,7 +38,7 @@ namespace StemaxGeoCode.ViewModels
             {
                 if (value == selectedObject) return;
                 selectedObject = value;
-                RebuildMapUri(SelectedObject);
+                //RebuildMapUri(SelectedObject);
                 OnPropertyChanged();
             }
         }
@@ -51,9 +50,9 @@ namespace StemaxGeoCode.ViewModels
             this.repository = repository;
             this.geocodeRepository = new GeocodeRepository(new YandexGeoApiClient(App.YA_API_KEY));
             this.mapUriBuilder = mapUriBuilder;
-            
+
             repository.loadAllObjects().ContinueWith(x =>
-            {                
+            {
                 foreach (var obj in x.Result)
                 {
                     Objects.Add(obj);
@@ -62,7 +61,7 @@ namespace StemaxGeoCode.ViewModels
             });
             MapUri = mapUriBuilder.Build();
 
-            
+
         }
 
         public bool MapEnabled => !mapUriBuilder.Center.IsZero;
@@ -76,7 +75,7 @@ namespace StemaxGeoCode.ViewModels
 
         private void GetCoordByObject(iObjectData obj)
         {
-            geocodeRepository.GetCoordinateByAdressAsync(obj.Adress).ContinueWith(x => 
+            geocodeRepository.GetCoordinateByAdressAsync(obj.Adress).ContinueWith(x =>
             {
                 obj.coordinate = x.Result;
             });
@@ -84,7 +83,7 @@ namespace StemaxGeoCode.ViewModels
 
         private void SaveObjectsFromList(List<iObjectData> objects)
         {
-            
+
         }
     }
 }
