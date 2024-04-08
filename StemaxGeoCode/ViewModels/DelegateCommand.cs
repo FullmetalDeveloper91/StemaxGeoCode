@@ -9,12 +9,12 @@ using System.Windows.Media.Animation;
 
 namespace StemaxGeoCode.ViewModels
 {
-    class DelegateCommand<T> : ICommand
+    class DelegateCommand : ICommand
     {
-        private readonly Predicate<T?>? _canExecute;
-        private readonly Action<T?> _execute;
+        private readonly Predicate<object> _canExecute;
+        private readonly Action<object> _execute;
 
-        public DelegateCommand(Action<T?> execute, Predicate<T?>? canExecute = null)
+        public DelegateCommand(Action<object> execute, Predicate<object> canExecute = null)
         {
             _execute = execute;
             _canExecute = canExecute;            
@@ -27,12 +27,12 @@ namespace StemaxGeoCode.ViewModels
 
         public bool CanExecute(object? parameter)
         {
-            return _canExecute?.Invoke((T)parameter) ?? false;
+            return _canExecute?.Invoke(parameter) ?? true;
         }
 
         public void Execute(object? parameter)
         {
-            _execute((T)parameter);
+            _execute(parameter);
         }
     }
 }

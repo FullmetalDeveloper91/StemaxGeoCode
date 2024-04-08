@@ -60,7 +60,7 @@ namespace StemaxGeoCode.Data
 
         public Uri Build()
         {
-            return new Uri($"http://static.maps.2gis.com/1.0?zoom={Zoom}&size={Width},{Height}&center={Center}&marker={Marker}");
+            return new Uri($"http://static.maps.2gis.com/1.0?zoom={Zoom}&size={Width},{Height}&center={Center}&markers={Marker}");
         }
     }
 }

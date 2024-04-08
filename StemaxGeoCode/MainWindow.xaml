@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StemaxGeoCode"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" xmlns:viewmodels="clr-namespace:StemaxGeoCode.ViewModels" xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" SizeChanged="Window_SizeChanged">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -16,6 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
         <ListBox 
             Name="adressesList" 
@@ -27,7 +28,7 @@
         
         <StackPanel Grid.Column="0" Grid.Row="1" Margin="5">
             <TextBlock Name="coordLabel" Height="20"/>            
-            <Button Name="getCoordBtn" Height="25" Margin="2,10,2,5">
+            <Button Name="getCoordBtn" Height="25" Margin="2,10,2,5" Command="{Binding GetCooordinatesCommand}">
                 Get Coordinates
             </Button>
         </StackPanel>
@@ -40,27 +41,30 @@
         <Grid
             Grid.Column="1" 
             Grid.Row="1">
-            <StackPanel 
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Bottom" 
-                Margin="10"
-                Grid.ZIndex="2">
-                <Button Name="btnZoomIn" Width="20" Height="20">
-                    +
-                </Button>
-                <Button Name="btnZoomOut" Width="20" Height="20">
-                    -
-                </Button>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel
+                Grid.Column="0">
+                <Label>Наименование:</Label>
+                <Label>Адрес:</Label>
+                <Label>Координаты:</Label>
             </StackPanel>
-            <Button 
-                Name="btnFocusToObj"
-                VerticalAlignment="Bottom"
-                HorizontalAlignment="Right"
-                Margin="10"
-                Padding="5"
-                Grid.ZIndex="2">
-                To object
-            </Button>
-        </Grid>        
+            <StackPanel
+                Grid.Column="1">
+                <TextBlock Text="{Binding SelectedObject.Name}"/>
+                <TextBlock Text="{Binding SelectedObject.Address}"/>
+                <TextBlock Text="{Binding SelectedObject.Coordinate}"/>               
+            </StackPanel>
+        </Grid>
+        <ProgressBar 
+            Grid.Column="0" 
+            Grid.Row="2" 
+            Minimum="{Binding MinLoadProgress}"
+            Maximum="{Binding MaxLoadProgress}"
+            Value="{Binding CurrentLoadProgress, Mode=OneWay}"
+            />
     </Grid>
 </Window>

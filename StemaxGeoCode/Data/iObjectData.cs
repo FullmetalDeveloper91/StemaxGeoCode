@@ -9,7 +9,8 @@ namespace StemaxGeoCode.Data
     interface iObjectData
     {
         int Id { get; }
-        string Adress { get; set; }
-        public Coordinate coordinate { get; set; }
+        string Name { get; }
+        string Address { get; set; }
+        public Coordinate Coordinate { get; set; }
     }
 }

@@ -8,19 +8,31 @@ namespace StemaxGeoCode.Data
 {
     class Coordinate
     {
-        private double latitude = 0;
         private double longitude = 0;
+        private double latitude = 0;        
 
-        public const double MIN_LATLON = 0;
-        public const double MAX_LAT = 90;
-        public const double MAX_LON = 180;
+        public const double MIN_LAT = -180;
+        public const double MIN_LON = -90;
+        public const double MAX_LAT = 180;
+        public const double MAX_LON = 90;
 
         public Coordinate(){}
 
-        public Coordinate (double latitude, double longitude)
+        public Coordinate (double longitude, double latitude)
         {
-            Latitude = latitude;
             Longitude = longitude;
+            Latitude = latitude;
+        }
+
+        public double Longitude
+        {
+            get => longitude;
+            set
+            {
+                if (value < MIN_LON || value > MAX_LON)
+                    throw new ArgumentOutOfRangeException($"Latitude must be between {MIN_LON} and {MAX_LON}");
+                longitude = value;
+            }
         }
 
         public double Latitude 
@@ -28,26 +40,16 @@ namespace StemaxGeoCode.Data
             get => latitude;
             set
             {
-                if (value < MIN_LATLON || value > MAX_LAT) 
-                    throw new ArgumentOutOfRangeException($"Latitude must be between {MIN_LATLON} and {MAX_LAT}");
+                if (value < MIN_LAT || value > MAX_LAT) 
+                    throw new ArgumentOutOfRangeException($"Latitude must be between {MIN_LAT} and {MAX_LAT}");
                 latitude = value;
             } 
-        }
-        public double Longitude
-        {
-            get => longitude;
-            set
-            {
-                if (value < MIN_LATLON || value > MAX_LAT)
-                    throw new ArgumentOutOfRangeException($"Latitude must be between {MIN_LATLON} and {MAX_LON}");
-                longitude = value;
-            }
-        }
+        }        
 
         public bool IsZero => latitude < 1 && longitude < 1;
 
         public override string ToString() =>
-            $"{latitude.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"))},{longitude.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"))}";
+            $"{longitude.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"))},{latitude.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"))}";
         
     }
 }
