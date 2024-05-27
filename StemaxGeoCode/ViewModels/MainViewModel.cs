@@ -16,11 +16,18 @@ namespace StemaxGeoCode.ViewModels
         private iGeocodeRepository geocodeRepository;
         private iMapUriBuilder mapUriBuilder;       
         private iObjectData selectedObject;
-        private CancellationToken cancellationToken;
+        private CancellationToken cancellationToken;        
 
-        private object objectsCollectionLock = new object();
-        public ObservableCollection<iObjectData> Objects { get; private set; }
+        private object objectsCollectionLock = new();
+        private Dictionary<iObjectData, List<(string name, Coordinate coordinate)>> multiCoordObjects = new();
 
+        private ObservableCollection<iObjectData> geoObjects;     
+        
+        public iNotifyService? notifyService = null;
+
+        public ObservableCollection<iObjectData> Objects {
+            get => geoObjects;
+        }
         public DataLoadingState State { get; private set; } = DataLoadingState.isLoaded;
 
         #region for progressbar count
@@ -43,7 +50,7 @@ namespace StemaxGeoCode.ViewModels
                 mapUri = value;
                 OnPropertyChanged();
             }
-        }
+        }       
         public iObjectData SelectedObject
         {
             get => selectedObject;
@@ -53,11 +60,17 @@ namespace StemaxGeoCode.ViewModels
                 selectedObject = value;
                 RebuildMapUri(SelectedObject);
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(MultiCoord));
             }
         }
 
+        public List<(string name, Coordinate coordinate)> MultiCoord {
+            get => (selectedObject!=null && multiCoordObjects.ContainsKey(selectedObject)) ? multiCoordObjects[selectedObject] : [];
+        }
+
         #region commands
-        private ICommand getCoordinatesCommand;       
+        private ICommand getCoordinatesCommand;
+        private bool onlyMultiCoordObjects;
 
         public ICommand GetCooordinatesCommand
         {
@@ -66,16 +79,16 @@ namespace StemaxGeoCode.ViewModels
                 return getCoordinatesCommand ?? (
                     getCoordinatesCommand = new DelegateCommand(x =>
                     {
-                        GetCoordByAllObjects(cancellationToken);
-                    }));
+                        GetCoordForAllObjects(cancellationToken);
+                    })
+                );
             }
         }
-
         #endregion
 
         public MainViewModel(iObjectsRepository repository, iMapUriBuilder mapUriBuilder)
         {
-            Objects = [];
+            geoObjects = [];
             BindingOperations.EnableCollectionSynchronization(Objects, objectsCollectionLock);
             this.repository = repository;
             //this.geocodeRepository = new GeocodeRepository(new YandexGeoApiClient(App.YA_API_KEY));
@@ -86,7 +99,7 @@ namespace StemaxGeoCode.ViewModels
             {
                 foreach (var obj in x.Result)
                 {
-                    Objects.Add(obj);
+                    geoObjects.Add(obj);
                 }
             });
             MapUri = mapUriBuilder.Build();
@@ -99,15 +112,7 @@ namespace StemaxGeoCode.ViewModels
             MapUri = mapUriBuilder.Build();
         }
 
-        private void GetCoordByObject(iObjectData obj)
-        {
-            geocodeRepository.GetCoordinateByAdressAsync(obj.Address).ContinueWith(x =>
-            {
-                obj.Coordinate = x.Result;
-            });
-        }
-
-        async private void GetCoordByAllObjects(CancellationToken cancellation)
+        async private void GetCoordForAllObjects(CancellationToken cancellation)
         {
             this.MinLoadProgress = 0;
             this.MaxLoadProgress = Objects.Count;
@@ -115,21 +120,34 @@ namespace StemaxGeoCode.ViewModels
 
             State = DataLoadingState.isLoading;
 
-            foreach (var obj in Objects)
+            try
             {
-                if (cancellation.IsCancellationRequested)
-                    break;
-                if (obj.Coordinate.IsZero)
+                foreach (var obj in Objects)
                 {
-                    //geocodeRepository.GetCoordinateByAdressAsync(obj.Adress).ContinueWith(x => { obj.coordinate = x.Result; CurrentLoadProgress++; });
-                    obj.Coordinate = await geocodeRepository.GetCoordinateByAdressAsync(obj.Address);
-                    CurrentLoadProgress++;
+                    if (cancellation.IsCancellationRequested)
+                        break;
+                    if (obj.Coordinate.IsZero)
+                    {
+                        var geoObjects = await geocodeRepository.GetCoordinateByAdressAsync(obj.Address);
+                        obj.Coordinate = geoObjects.First().coordinate;
+                        if (geoObjects.Count > 1)
+                            multiCoordObjects.Add(obj, geoObjects);
+                        CurrentLoadProgress++;
+                    }
+                    else CurrentLoadProgress++;
                 }
-                else CurrentLoadProgress++;
             }
-
+            catch (Exception ex)
+            {
+                notifyService?.OnNotifyError(ex.Message);
+                State = DataLoadingState.isError;
+            }
+            finally
+            {               
+                CurrentLoadProgress = MinLoadProgress;
+            }
             State = DataLoadingState.isLoaded;
-            CurrentLoadProgress = MinLoadProgress;
+            notifyService?.OnNotifyInfo("Загрузка координат завершена");
         }
 
         private void SaveObjectsFromList(List<iObjectData> objects)

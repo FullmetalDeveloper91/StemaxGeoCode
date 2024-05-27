@@ -10,6 +10,6 @@ namespace StemaxGeoCode.DataSource.GeoCode
 {
     internal interface iGeoApiClient
     {
-        public Task<Coordinate> GetGeoByAdressAsync(string adress);
+        public Task<List<(string name, Coordinate coordinate)>> GetGeoByAdressAsync(string adress);
     }
 }

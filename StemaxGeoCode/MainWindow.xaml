@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StemaxGeoCode"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" xmlns:viewmodels="clr-namespace:StemaxGeoCode.ViewModels" xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" SizeChanged="Window_SizeChanged">
+        Title="MainWindow" Height="450" Width="800">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -17,14 +17,14 @@
             <RowDefinition/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="25"/>
-        </Grid.RowDefinitions>
+        </Grid.RowDefinitions>       
+            
         <ListBox 
-            Name="adressesList" 
             Grid.Column="0" 
             Grid.Row="0"
-            ItemsSource="{Binding Objects}" SelectedItem="{Binding SelectedObject}">           
-        </ListBox>
-             
+            Name="adressesList"            
+            ItemsSource="{Binding Objects}" SelectedItem="{Binding SelectedObject}">    
+        </ListBox>        
         
         <StackPanel Grid.Column="0" Grid.Row="1" Margin="5">
             <TextBlock Name="coordLabel" Height="20"/>            
@@ -46,18 +46,24 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackPanel
-                Grid.Column="0">
-                <Label>Наименование:</Label>
-                <Label>Адрес:</Label>
-                <Label>Координаты:</Label>
-            </StackPanel>
-            <StackPanel
-                Grid.Column="1">
-                <TextBlock Text="{Binding SelectedObject.Name}"/>
-                <TextBlock Text="{Binding SelectedObject.Address}"/>
-                <TextBlock Text="{Binding SelectedObject.Coordinate}"/>               
-            </StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+        
+            <Label Grid.Row="0">Наименование:</Label>
+            <Label Grid.Row="1">Адрес:</Label>
+            <Label Grid.Row="2">Координаты:</Label>
+
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding SelectedObject.Name}"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding SelectedObject.Address}"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding SelectedObject.Coordinate}">
+                
+            </TextBlock>
+            <ComboBox Grid.Column="1" Grid.Row="2" ItemsSource="{Binding MultiCoord}">
+            </ComboBox>
+
         </Grid>
         <ProgressBar 
             Grid.Column="0" 

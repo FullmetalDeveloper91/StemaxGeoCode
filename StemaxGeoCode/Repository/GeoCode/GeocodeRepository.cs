@@ -17,7 +17,7 @@ namespace StemaxGeoCode.Repository.GeoCode
             this.dataSource = dataSource;
         }
 
-        public async Task<Coordinate> GetCoordinateByAdressAsync(string adress)
+        public async Task<List<(string name, Coordinate coordinate)>> GetCoordinateByAdressAsync(string adress)
         {
             return await dataSource.GetGeoByAdressAsync(adress);
         }

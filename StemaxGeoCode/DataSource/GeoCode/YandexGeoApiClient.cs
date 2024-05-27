@@ -6,12 +6,12 @@ namespace StemaxGeoCode.DataSource.GeoCode
 {
     class YandexGeoApiClient : iGeoApiClient, IDisposable
     {
-        private string apiKey = "";
+        private readonly string apiKey = "";
 
         private const string BASE_URI = "https://geocode-maps.yandex.ru/1.x";
 
-        private RestClientOptions options;
-        private RestClient client;
+        private readonly RestClientOptions options;
+        private readonly RestClient client;
 
         public YandexGeoApiClient(string apiKey)
         {
@@ -20,22 +20,31 @@ namespace StemaxGeoCode.DataSource.GeoCode
             client = new RestClient(options);
         }
 
-        async public Task<Coordinate> GetGeoByAdressAsync(string adress)
+        async public Task<List<(string name, Coordinate coordinate)>> GetGeoByAdressAsync(string adress)
         {
+            var GeoObjects = new List<(string name, Coordinate coordinate)>();
             var restRequest = new RestRequest()
                 .AddParameter("apikey", apiKey)
                 .AddParameter("geocode", adress.Replace(' ', '+'))
                 .AddParameter("format", "json");
 
             var response = await client.GetAsync<Root>(restRequest);
-            var responses = response!.response.GeoObjectCollection.featureMember;
-            if (responses.Count <= 0)
-                return new Coordinate();
-            string[] pos = responses.First().GeoObject.Point.pos.Split(' ');
-            var latitude = double.Parse(pos[1].Replace('.', ','));
-            var longitude = double.Parse(pos[0].Replace('.', ','));
+            var featureMembers = response!.response.GeoObjectCollection.featureMember;
 
-            return new Coordinate(longitude, latitude);
+            if (featureMembers.Count <= 0)
+                GeoObjects.Add((adress, new Coordinate()));
+            else
+            {
+                foreach (var geoObject in featureMembers)
+                {
+                    string[] pos = geoObject.GeoObject.Point.pos.Split(' ');
+                    var longitude = double.Parse(pos[0].Replace('.', ','));
+                    var latitude = double.Parse(pos[1].Replace('.', ','));
+
+                    GeoObjects.Add((geoObject.GeoObject.name, new Coordinate(longitude, latitude)));
+                }
+            }
+            return GeoObjects;
         }
 
         public void Dispose()

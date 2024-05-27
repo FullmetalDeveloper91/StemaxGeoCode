@@ -4,6 +4,6 @@ namespace StemaxGeoCode.Repository.GeoCode
 {
     interface iGeocodeRepository
     {
-        public Task<Coordinate> GetCoordinateByAdressAsync(string adress);
+        public Task<List<(string name,Coordinate coordinate)>> GetCoordinateByAdressAsync(string adress);
     }
 }
